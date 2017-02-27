@@ -108,9 +108,8 @@
         </div>
         <div id="container" style="height: 100%;">
             <div id="clock_container">
-                <div id="clock">
-                    Clock goes here
-                </div>
+                <div id="clock"></div>
+                <script src="clock.js"></script>
             </div>
         </div>
     </body>
