@@ -90,6 +90,7 @@
             text-align: center;
         }
         </style>
+        <?php include 'statRecorder.php';?>
     </head>
     <body>
         <div id="header">
