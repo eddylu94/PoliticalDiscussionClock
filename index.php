@@ -69,7 +69,8 @@
 
         #clock_container {
             display: table-cell;
-
+            
+            text-align: center;
             vertical-align: middle;
         }
 
@@ -89,6 +90,26 @@
             line-height: 200px;
             text-align: center;
         }
+
+        #resetButton {
+            margin-top: 50px;
+            
+            height: 100px;
+            width: 500px;
+            border: none;
+            border-radius: 10px;
+
+            color: #D9D9D9;
+            background-color: #181818;
+            
+            font-size: 70px;
+
+            cursor: pointer;
+        }
+
+        #resetButton:hover {
+            background-color: #262626;
+        }
         </style>
         <?php include 'statRecorder.php';?>
     </head>
@@ -107,11 +128,19 @@
             </div>
             <div id="header_placeholder"></div>
         </div>
+        
         <div id="container" style="height: 100%;">
             <div id="clock_container">
                 <div id="clock"></div>
                 <script src="clock.js"></script>
+                <button id="resetButton" type="button" onclick="onButtonPress()">RESET</button>
+                <script>
+                    var onButtonPress = function () {
+                        console.log("Button pressed");
+                    }
+                </script>
             </div>
         </div>
+        
     </body>
 </html>
