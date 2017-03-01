@@ -110,6 +110,52 @@
         #resetButton:hover {
             background-color: #262626;
         }
+
+        #submitFormPopup {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+
+            display: block;
+            width: 50%;
+            height: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            overflow: auto;
+            z-index: 200;
+
+            text-align: center;
+            font-size: 30px;
+
+            background-color: #181818;
+            color: #FFFFFF;
+        }
+
+        #closeButton {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            width: 30px;
+            padding: 20px;
+
+            font-size: 30px;
+
+            color: #FFFFFF;
+
+            cursor: pointer;
+        }
+
+        #submitFormDescription {
+            top: 10px;
+        }
+
+        .submitFormCheckbox {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
         </style>
         <?php include 'statRecorder.php';?>
     </head>
@@ -140,6 +186,18 @@
                     }
                 </script>
             </div>
+        </div>
+
+        <div id="submitFormPopup">
+            <form action="">
+                <span id="submitFormDescription">
+                    Submit form description
+                </span>
+                <div id="checkBoxes">
+
+                </div>
+            </form>
+            <span id="closeButton">&#10006;</span>
         </div>
         
     </body>
