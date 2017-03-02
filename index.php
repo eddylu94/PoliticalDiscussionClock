@@ -78,6 +78,7 @@
             margin-left: auto;
             margin-right: auto; 
             
+            display: none;
             padding: 20px;
             width: 70%;
             height: 200px;
@@ -215,7 +216,7 @@
             outline: 0;
         }
         </style>
-        <?php //include 'statRecorder.php';?>
+        <?php include 'statRecorder.php';?>
     </head>
     <body>
         <div id="header">
@@ -244,7 +245,7 @@
         <div id="overlay" onclick="toggleSubmitFormPopup(false)"></div>
 
         <div id="submitFormPopup">
-            <form action="" style="align-self: center;">
+            <form action="updateResults.php"  method="post" style="align-self: center;">
                 <span id="closeButton" onclick="toggleSubmitFormPopup(false)">&#10006;</span>
 
                 <span id="submitFormDescription">Was this about the current US President?</span>
@@ -254,7 +255,7 @@
                     <button id="checkBoxButton_no" type="button" onclick="toggleCheckBoxes(false)">&#9744; No</button>
                 </div>
 
-                <button id="submitFormSubmitButton" type="button" onclick="submitFormSubmit()">SUBMIT</button>
+                <input id="submitFormSubmitButton" type="submit" name="submit" value="SUBMIT" />
             </form>
             <script>
                 var toggleSubmitFormPopup = function (isOpen) {
