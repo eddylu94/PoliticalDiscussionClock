@@ -129,6 +129,9 @@
             background-color: #000000;
             opacity: 0.9;
         }
+        #overlay.visible {
+            display: flex; !important
+        }
 
         #submitFormPopup {
             position: absolute;
@@ -150,6 +153,9 @@
 
             background-color: #181818;
             color: #FFFFFF;
+        }
+        #submitFormPopup.visible {
+            display: flex; !important
         }
 
         #closeButton {
@@ -204,12 +210,16 @@
             border: none;
             border-radius: 10px;
 
-            color: #333333;
-            background-color: #080808;
+            color: #FFFFFF;
+            background-color: #000000;
             
             font-size: 50px;
 
             cursor: pointer;
+        }
+        #submitFormSubmitButton:disabled{
+            color: #333333;
+            background-color: #080808;
         }
 
         #submitFormSubmitButton:focus {
@@ -238,57 +248,25 @@
             <div id="clock_container">
                 <div id="clock"></div>
                 <script src="clock.js"></script>
-                <button id="resetButton" type="button" onclick="toggleSubmitFormPopup(true)">RESET</button>
+                <button id="resetButton" type="button">RESET</button>
             </div>
         </div>
 
-        <div id="overlay" onclick="toggleSubmitFormPopup(false)"></div>
+        <div id="overlay"></div>
 
         <div id="submitFormPopup">
             <form action="updateResults.php"  method="post" style="align-self: center;">
                 <span id="closeButton" onclick="toggleSubmitFormPopup(false)">&#10006;</span>
 
-                <span id="submitFormDescription">Was this about the current US President?</span>
+                <span id="flavorText"></span>
                 
                 <div id="checkBoxes" style="margin-top: 50px;">
-                    <button id="checkBoxButton_yes" type="button" onclick="toggleCheckBoxes(true)">&#9744; Yes</button>
-                    <button id="checkBoxButton_no" type="button" onclick="toggleCheckBoxes(false)">&#9744; No</button>
+                    <button id="checkBoxButton_yes" type="button">&#9744; Yes</button>
+                    <button id="checkBoxButton_no" type="button">&#9744; No</button>
                 </div>
 
-                <input id="submitFormSubmitButton" type="submit" name="submit" value="SUBMIT" />
+                <input id="submitFormSubmitButton" type="submit" name="submit" value="SUBMIT" disabled=true />
             </form>
-            <script>
-                var toggleSubmitFormPopup = function (isOpen) {
-                    const display = isOpen ? "flex" : "none";
-                    
-                    document.getElementById("overlay").style.display = display;
-                    document.getElementById("submitFormPopup").style.display = display;
-
-                    if (!isOpen) {
-                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9744; Yes";
-                        document.getElementById("checkBoxButton_no").innerHTML = "&#9744; No";
-
-                        document.getElementById("submitFormSubmitButton").style.backgroundColor = "#080808";
-                        document.getElementById("submitFormSubmitButton").style.color = "#333333";
-                        document.getElementById("submitFormSubmitButton").disabled = true;
-                    }
-                }
-                
-                var toggleCheckBoxes = function (isYes) {
-                    document.getElementById("submitFormSubmitButton").style.backgroundColor = "#000000";
-                    document.getElementById("submitFormSubmitButton").style.color = "#FFFFFF";
-                    document.getElementById("submitFormSubmitButton").disabled = false;
-
-                    if (isYes) {
-                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9745; Yes";
-                        document.getElementById("checkBoxButton_no").innerHTML = "&#9744; No";
-                    }
-                    else {
-                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9744; Yes";
-                        document.getElementById("checkBoxButton_no").innerHTML = "&#9745; No";
-                    }
-                }
-            </script>
         </div>
         
     </body>
