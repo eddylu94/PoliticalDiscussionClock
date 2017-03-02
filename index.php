@@ -111,19 +111,38 @@
             background-color: #262626;
         }
 
+        #resetButton:focus {
+            outline: 0;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: none;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+
+            background-color: #000000;
+            opacity: 0.9;
+        }
+
         #submitFormPopup {
             position: absolute;
-            top: 25%;
+            top: 20%;
             left: 25%;
 
-            display: block;
+            display: none;
             width: 50%;
-            height: 50%;
+            height: 60%;
             padding: 10px;
             box-sizing: border-box;
             border-radius: 20px;
             overflow: auto;
             z-index: 200;
+            justify-content: center;
 
             text-align: center;
             font-size: 30px;
@@ -137,6 +156,7 @@
             right: 0;
             top: 0;
 
+            display: block;
             width: 30px;
             padding: 20px;
 
@@ -147,17 +167,55 @@
             cursor: pointer;
         }
 
-        #submitFormDescription {
-            top: 10px;
+        #checkBoxButton_yes {
+            background-color: transparent;
+            color: #FFFFFF;
+            font-size: 50px;
+            border: none;
+
+            cursor: pointer;
         }
 
-        .submitFormCheckbox {
-            display: block;
-            width: 20px;
-            height: 20px;
+        #checkBoxButton_yes:focus {
+            outline: 0;
+        }
+
+        #checkBoxButton_no {
+            margin-left: 80px;
+            
+            background-color: transparent;
+            color: #FFFFFF;
+            font-size: 50px;
+            border: none;
+            
+            cursor: pointer;
+        }
+
+        #checkBoxButton_no:focus {
+            outline: 0;
+        }
+
+        #submitFormSubmitButton {
+            margin-top: 50px;
+            
+            height: 100px;
+            width: 500px;
+            border: none;
+            border-radius: 10px;
+
+            color: #333333;
+            background-color: #080808;
+            
+            font-size: 50px;
+
+            cursor: pointer;
+        }
+
+        #submitFormSubmitButton:focus {
+            outline: 0;
         }
         </style>
-        <?php include 'statRecorder.php';?>
+        <?php //include 'statRecorder.php';?>
     </head>
     <body>
         <div id="header">
@@ -179,25 +237,57 @@
             <div id="clock_container">
                 <div id="clock"></div>
                 <script src="clock.js"></script>
-                <button id="resetButton" type="button" onclick="onButtonPress()">RESET</button>
-                <script>
-                    var onButtonPress = function () {
-                        console.log("Button pressed");
-                    }
-                </script>
+                <button id="resetButton" type="button" onclick="toggleSubmitFormPopup(true)">RESET</button>
             </div>
         </div>
 
-        <div id="submitFormPopup">
-            <form action="">
-                <span id="submitFormDescription">
-                    Submit form description
-                </span>
-                <div id="checkBoxes">
+        <div id="overlay" onclick="toggleSubmitFormPopup(false)"></div>
 
+        <div id="submitFormPopup">
+            <form action="" style="align-self: center;">
+                <span id="closeButton" onclick="toggleSubmitFormPopup(false)">&#10006;</span>
+
+                <span id="submitFormDescription">Was this about the current US President?</span>
+                
+                <div id="checkBoxes" style="margin-top: 50px;">
+                    <button id="checkBoxButton_yes" type="button" onclick="toggleCheckBoxes(true)">&#9744; Yes</button>
+                    <button id="checkBoxButton_no" type="button" onclick="toggleCheckBoxes(false)">&#9744; No</button>
                 </div>
+
+                <button id="submitFormSubmitButton" type="button" onclick="submitFormSubmit()">SUBMIT</button>
             </form>
-            <span id="closeButton">&#10006;</span>
+            <script>
+                var toggleSubmitFormPopup = function (isOpen) {
+                    const display = isOpen ? "flex" : "none";
+                    
+                    document.getElementById("overlay").style.display = display;
+                    document.getElementById("submitFormPopup").style.display = display;
+
+                    if (!isOpen) {
+                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9744; Yes";
+                        document.getElementById("checkBoxButton_no").innerHTML = "&#9744; No";
+
+                        document.getElementById("submitFormSubmitButton").style.backgroundColor = "#080808";
+                        document.getElementById("submitFormSubmitButton").style.color = "#333333";
+                        document.getElementById("submitFormSubmitButton").disabled = true;
+                    }
+                }
+                
+                var toggleCheckBoxes = function (isYes) {
+                    document.getElementById("submitFormSubmitButton").style.backgroundColor = "#000000";
+                    document.getElementById("submitFormSubmitButton").style.color = "#FFFFFF";
+                    document.getElementById("submitFormSubmitButton").disabled = false;
+
+                    if (isYes) {
+                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9745; Yes";
+                        document.getElementById("checkBoxButton_no").innerHTML = "&#9744; No";
+                    }
+                    else {
+                        document.getElementById("checkBoxButton_yes").innerHTML = "&#9744; Yes";
+                        document.getElementById("checkBoxButton_no").innerHTML = "&#9745; No";
+                    }
+                }
+            </script>
         </div>
         
     </body>
