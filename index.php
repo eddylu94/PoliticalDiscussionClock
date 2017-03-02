@@ -267,8 +267,6 @@
                 </div>
                 <button id="submitFormSubmitButton" type="button" disabled=true>SUBMIT</button>
             </form>
-            <script>
-            </script>
         </div>
         
     </body>
