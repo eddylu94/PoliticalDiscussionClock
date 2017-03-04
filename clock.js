@@ -1,9 +1,26 @@
-﻿﻿var dataLoaded = false;
+﻿var recordTime = document.getElementById("recordTime");
+
+$.get('getCurrentRecord.php', function (data) {
+	var timeInSeconds = parseInt(data);
+
+	var fullSeconds = timeInSeconds;
+	var fullMinutes = Math.floor(fullSeconds / 60);
+	var fullHours = Math.floor(fullMinutes / 60);
+
+	var seconds = fullSeconds % 60;
+	var minutes = fullMinutes % 60;
+	var hours = fullHours;
+
+	recordTime.innerHTML = hours + ":" + makeNDigits(minutes.toString(), 2) + ":" + makeNDigits(seconds.toString(), 2);
+	recordTime.style.display = "inline-block";
+});
+
+var isClockDataLoaded = false;
 
 getTime();
 setInterval(getTime, 100);
 
-$(document).ready(() =>{
+$(document).ready(() => {
 	generateClickHandlers();
 	getTime();
 	setInterval(getTime, 100);
@@ -15,12 +32,12 @@ var startTimeInSeconds;
 
 $.get('getLatestTime.php', function(data) {
 	startTimeInSeconds = parseInt(data);
+	isClockDataLoaded = true;
 	clock.style.display = "block";
-	dataLoaded = true;
 });
 
 function getTime() {
-	if (dataLoaded) {
+	if (isClockDataLoaded) {
 		var dateObj = new Date();
 		var timeInSeconds = Math.floor(dateObj.getTime() / 1000) - startTimeInSeconds;
 
@@ -32,7 +49,7 @@ function getTime() {
 		var minutes = fullMinutes % 60;
 		var hours = fullHours;
 
-		clock.innerHTML = hours + ":" + makeNDigits(minutes.toString(), 2) + ":" + makeNDigits(seconds.toString(), 2); // + "." + makeNDigits(milliseconds.toString(), 3);
+		clock.innerHTML = hours + ":" + makeNDigits(minutes.toString(), 2) + ":" + makeNDigits(seconds.toString(), 2);
 	}
 }
 

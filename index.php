@@ -74,15 +74,47 @@
             vertical-align: middle;
         }
 
-        #clock {
+        #clock_wrapper {
             margin-left: auto;
             margin-right: auto; 
+
+            width: 70%;
+        }
+
+        #currentRecordContainer {
+            width: 100%;
+            overflow: hidden
+        }
+
+        #currentRecord {   
+            float: right;
             
+            display: inline-block;
+            padding: 20px 50px 20px 50px;
+            height: 50px;
+            border-radius: 20px 20px 0px 0px;
+            
+            background-color: #262626;
+            color: #CCCCCC;
+            
+            font-size: 35px;
+            line-height: 50px;
+            text-align: right;
+        }
+
+        #recordTime {
+            display: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 45px;
+        }
+
+        #clock {
             display: none;
             padding: 20px;
-            width: 70%;
             height: 200px;
-            border-radius: 20px;
+            border-radius: 20px 0px 20px 20px;
             
             background-color: #262626;
             color: #CCCCCC;
@@ -246,9 +278,14 @@
         
         <div id="container" style="height: 100%;">
             <div id="clock_container">
-                <div id="clock"></div>
-                <script src="clock.js"></script>
-                <button id="resetButton" type="button">RESET</button>
+                <div id="clock_wrapper">
+                    <div id="currentRecordContainer">
+                        <div id="currentRecord">Current Record: <span id="recordTime"></span></div>
+                    </div>
+                    <div id="clock"></div>
+                    <script src="clock.js"></script>
+                    <button id="resetButton" type="button">RESET</button>
+                </div>
             </div>
         </div>
 
