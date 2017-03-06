@@ -261,20 +261,7 @@
         <?php include 'statRecorder.php';?>
     </head>
     <body>
-        <div id="header">
-            <div id="header_bar">
-                <div id="header_wrapper">
-                    <a href="">
-                        <div id="title">
-                            <a href="index.php" style="text-decoration: none; color: #FFFFFF;">
-                                Political Discussion Clock
-                            </a>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div id="header_placeholder"></div>
-        </div>
+        <?php include 'header.php';?>
         
         <div id="container" style="height: 100%;">
             <div id="clock_container">
