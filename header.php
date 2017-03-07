@@ -2,10 +2,23 @@
     <div id="header_bar">
         <div id="header_wrapper">
             <a href="">
-                <div id="title">
-                    <a href="index.php" style="text-decoration: none; color: #FFFFFF;">
-                        Political Discussion Clock
-                    </a>
+                <a href="">
+                    <div id="title">
+                        <div id="title_left">
+                            <a href="index.php">
+                                Political Discussion Clock
+                            </a>
+                        </div>
+                    </div>
+                </a>
+                <div id="menu">
+                    <div id="menu_right">
+                        <ul>
+                            <a href="history.php">
+                                History
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </a>
         </div>

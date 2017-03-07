@@ -38,14 +38,14 @@
             
             display: inline-block;
             padding: 20px 50px 20px 50px;
-            height: 50px;
+            height: 40px;
             border-radius: 20px 20px 0px 0px;
             
             background-color: #262626;
             color: #CCCCCC;
             
             font-size: 35px;
-            line-height: 50px;
+            line-height: 40px;
             text-align: right;
         }
 
@@ -54,27 +54,27 @@
             font-weight: bold;
             display: inline-block;
             margin-left: 10px;
-            font-size: 45px;
+            font-size: 35px;
         }
 
         #clock {
             display: none;
             padding: 20px;
-            height: 200px;
+            height: 150px;
             border-radius: 20px 0px 20px 20px;
             
             background-color: #262626;
             color: #CCCCCC;
             
             font-size: 150px;
-            line-height: 200px;
+            line-height: 150px;
             text-align: center;
         }
 
         #resetButton {
             margin-top: 50px;
             
-            height: 100px;
+            height: 80px;
             width: 500px;
             border: none;
             border-radius: 10px;
@@ -82,7 +82,7 @@
             color: #D9D9D9;
             background-color: #181818;
             
-            font-size: 70px;
+            font-size: 50px;
 
             cursor: pointer;
         }
@@ -184,7 +184,7 @@
         #submitFormSubmitButton {
             margin-top: 50px;
             
-            height: 100px;
+            height: 80px;
             width: 500px;
             border: none;
             border-radius: 10px;

@@ -31,6 +31,25 @@ body {
     margin: 0px 40px 0px 40px;
 }
 
+#header ul {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+#header li {
+    display: inline-block;
+}
+
+#header li a {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #D9D9D9;
+}
+
 #header_placeholder {
     height: 50px;
     width: 100%;
@@ -45,7 +64,39 @@ body {
     
     color: #FFFFFF;
 
-    line-height: 50px;
     font-size: xx-large;
     font-weight: bold;
+}
+
+#title_left {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#title_left a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#menu {
+    height: 50px;
+}
+
+#menu_right {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+}
+
+#menu_right a {
+    text-decoration: none;
+    color: #D9D9D9;
+}
+
+#menu_right a:hover {
+    color: #FFFFFF;
 }
