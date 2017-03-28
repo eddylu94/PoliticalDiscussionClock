@@ -12,10 +12,11 @@ $previousTime = intval($row[0]);
 
 $period = $time - $previousTime;
 
-$isPresident = $_POST['isPresident'];
+$flavourQuestion = $_POST['flavourQuestion'];
+$flavourResponse = $_POST['flavourResponse'];
 
-$sql = "INSERT INTO Clock (IPAddress, Time, Period, IsPresident)
-VALUES ('$ip', '$time', '$period', '$isPresident')";
+$sql = "INSERT INTO Clock (IPAddress, Time, Period, FlavourQuestion, FlavourResponse)
+VALUES ('$ip', '$time', '$period', '$flavourQuestion', '$flavourResponse')";
 
 mysql_query($sql) or die (); 
 mysql_close();

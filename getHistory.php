@@ -2,11 +2,14 @@
 
 require_once('resultsTable.php');  
 
-$query = mysql_query("SELECT Time, Period FROM `Clock` ORDER BY ID DESC LIMIT 15");
+$query = mysql_query("SELECT Time, Period, FlavourQuestion, FlavourResponse FROM `Clock` ORDER BY ID DESC LIMIT 15");
 
 while($rows = mysql_fetch_array($query)) {
     $time = $rows['Time'];
     $period = $rows['Period'];
+	
+	$question = $rows['FlavourQuestion'];
+	$response = $rows['FlavourResponse'];
 
     $resetDate = date("F j, Y", $time);
     $resetTime = date("G:i:s", $time);
@@ -23,7 +26,7 @@ while($rows = mysql_fetch_array($query)) {
 
 	$duration = $hours . ":" . makeNDigits(strval($minutes), 2) . ":" . makeNDigits(strval($seconds), 2);
 
-    echo '<tr><td>'. $resetDate .'</td><td>'. $resetTime .'</td><td>' . $duration . '</td></tr>';
+    echo '<tr><td>' . $resetDate . '</td><td>' . $resetTime . '</td><td>' . $duration . '</td><td>' . $question . '</td><td>' . $response . '</td></tr>';
 }
 
 function makeNDigits($value, $n) {

@@ -232,6 +232,9 @@
 
                 <span id="flavorText"></span>
                 
+                <input id="flavourQuestion" type="text" name="flavourQuestion" style="display: none;" />
+                <input id="flavourResponse" type="text" name="flavourResponse" style="display: none;" />
+
                 <div id="checkBoxes" style="margin-top: 50px;">
                     <button id="checkBoxButton_yes" type="button">&#9744; Yes</button>
                     <button id="checkBoxButton_no" type="button">&#9744; No</button>

@@ -67,7 +67,9 @@ var toggleSubmitFormPopup = function (isOpen) {
 		$("#overlay").css("display", "flex");
 		$("#submitFormPopup").css("display", "flex");
 		var prompts = ["But is it a sandwich?", "Free food in March? Only after 7pm on the 5th floor.", "Make CRM great again!", "Santiago brought up Trump, didn't he?", "I can bench 130lbs."]
-		$("#flavorText").text(prompts[Math.floor(Math.random() * prompts.length)]);
+		var prompt = prompts[Math.floor(Math.random() * prompts.length)];
+		$("#flavorText").text(prompt);
+		$("#flavourQuestion").val(prompt);
 	}
 	if (!isOpen) {
 		$("#overlay").css("display", "none");
@@ -79,6 +81,7 @@ var toggleSubmitFormPopup = function (isOpen) {
 }
                 
 var toggleCheckBoxes = function (isYes) {
+	$("#flavourResponse").val(isYes ? "Yes" : "No");
     $("#submitFormSubmitButton").attr("disabled", false);
     $("#checkBoxButton_yes").html( isYes ? "&#9745; Yes" : "&#9744; Yes");
     $("#checkBoxButton_no").html( isYes ? "&#9744; No" : "&#9745; No");

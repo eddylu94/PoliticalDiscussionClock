@@ -51,6 +51,8 @@
                         <th>Reset Date</th>
                         <th>Reset Time</th>
                         <th>Duration</th>
+                        <th>Question</th>
+                        <th>Response</th>
                     </tr>
                     <?php include 'getHistory.php';?>
                 </table>
