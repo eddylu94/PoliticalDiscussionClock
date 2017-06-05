@@ -2,9 +2,9 @@
 
 require_once('resultsTable.php');  
 
-$query = mysql_query("SELECT Time, Period, FlavourQuestion, FlavourResponse FROM `Clock` ORDER BY ID DESC LIMIT 15");
+$query = mysqli_query($link, "SELECT Time, Period, FlavourQuestion, FlavourResponse FROM `Clock` ORDER BY ID DESC LIMIT 15");
 
-while($rows = mysql_fetch_array($query)) {
+while($rows = mysqli_fetch_array($query)) {
     $time = $rows['Time'];
     $period = $rows['Period'];
 	
@@ -38,6 +38,6 @@ function makeNDigits($value, $n) {
 	return $value;
 }
 
-mysql_close();
+mysqli_close($link);
 
 ?>
