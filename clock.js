@@ -66,7 +66,7 @@ var toggleSubmitFormPopup = function (isOpen) {
 	if (isOpen) {
 		$("#overlay").css("display", "flex");
 		$("#submitFormPopup").css("display", "flex");
-		var prompts = ["But is it a sandwich?", "Free food in March? Only after 7pm on the 5th floor.", "Make CRM great again!", "Santiago brought up Trump, didn't he?", "I can bench 130lbs."]
+		var prompts = ["But is it a sandwich?", "Free food in March? Only after 7pm on the 5th floor.", "Make CRM great again!", "Santiago brought up Trump, didn't he?", "I can bench 130lbs.", "In Miami...", "Anyone want to go to the Grand Coulee Dam?", "Is that near Lake Chelan?", "UCI has been code complete since 3/10", "Is that a euphemism?", "It's too bright to sit outside", "He means he went around the whole room", "When I am happy I won't have time to make these anymore", "Wreaths are offensive", "On a school night?!?", "Hululululu", "Women, not women"]
 		var prompt = prompts[Math.floor(Math.random() * prompts.length)];
 		$("#flavorText").text(prompt);
 		$("#flavourQuestion").val(prompt);
