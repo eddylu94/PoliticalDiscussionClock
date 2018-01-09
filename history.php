@@ -7,10 +7,8 @@
         <script src="//code.jquery.com/jquery-1.12.4.js"></script>
         <style>
             #history_div {
-                margin-top: 50px;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
+                margin: 50px auto;
+                width: 80%;
             }
             #history {
                 width: 100%;
