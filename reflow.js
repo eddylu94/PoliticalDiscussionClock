@@ -4,6 +4,7 @@
 
 var reflow = function() {
 	if (mobilecheck()) {
+		// Header
 		document.getElementById("header_bar").style.height = "100px";
 		document.getElementById("title_left_link").innerHTML = "<img id=\"title_left_img\" src=\"ic_home_white_24dp_2x.png\" />";
 		document.getElementById("title_left_link").style.height = "100px";
@@ -17,8 +18,40 @@ var reflow = function() {
 		document.getElementById("menu_right").style.height = "100px";
 		document.getElementById("menu_right").style.lineHeight = "100px";
 		document.getElementById("header_wrapper").style.margin = "0px 20px 0px 20px";
+		
+		// Index page
+		document.getElementById("clock_wrapper").style.marginLeft = "0px";
+		document.getElementById("clock_wrapper").style.marginRight = "0px";
+		document.getElementById("clock_wrapper").style.width = "100%";
+		document.getElementById("clock").style.borderRadius = "0px";
+		document.getElementById("clock").style.height = "200px";
+		document.getElementById("clock").style.fontSize = "180px";
+		document.getElementById("clock").style.lineHeight = "200px";
+		document.getElementById("currentRecord").style.borderRadius = "20px 0px 0px 0px";
+		document.getElementById("currentRecord").style.height = "60px";
+		document.getElementById("currentRecord").style.fontSize = "50px";
+		document.getElementById("currentRecord").style.lineHeight = "60px";
+		document.getElementById("recordTime").style.fontSize = "50px";
+		document.getElementById("resetButton").style.height = "100px";
+		document.getElementById("resetButton").style.fontSize = "60px";
+
+		// Index page submit form popup
+		document.getElementById("submitFormPopup").style.left = "0";
+		document.getElementById("submitFormPopup").style.width = "100%";
+		document.getElementById("submitFormPopup").style.height = "50%";
+		document.getElementById("submitFormPopup").style.borderRadius = "0";
+		document.getElementById("submitFormPopup").style.fontSize = "50px";
+		document.getElementById("closeButton").style.width = "50px";
+		document.getElementById("closeButton").style.fontSize = "50px";
+		document.getElementById("flavorText").style.margin = "0px 20px";
+		document.getElementById("checkBoxes").style.marginTop = "80px";
+		document.getElementById("submitFormSubmitButton").style.marginTop = "80px";
+		document.getElementById("submitFormSubmitButton").style.width = "650px";
+		document.getElementById("submitFormSubmitButton").style.height = "120px";
+		document.getElementById("submitFormSubmitButton").style.fontSize = "90px";
 	}
 	else {
+		// Header
 		document.getElementById("header_bar").style.height = "50px";
 		document.getElementById("title_left_link").innerHTML = "Political Discussion Clock";
 		document.getElementById("title_left_link").style.height = "50px";
@@ -32,6 +65,37 @@ var reflow = function() {
 		document.getElementById("menu_right").style.height = "50px";
 		document.getElementById("menu_right").style.lineHeight = "50px";
 		document.getElementById("header_wrapper").style.margin = "0px 40px 0px 40px";
+
+		// Index page
+		document.getElementById("clock_wrapper").style.marginLeft = "auto";
+		document.getElementById("clock_wrapper").style.marginRight = "auto";
+		document.getElementById("clock_wrapper").style.width = "70%";
+		document.getElementById("clock").style.borderRadius = "20px 0px 20px 20px";
+		document.getElementById("clock").style.height = "150px";
+		document.getElementById("clock").style.fontSize = "150px";
+		document.getElementById("clock").style.lineHeight = "150px";
+		document.getElementById("currentRecord").style.borderRadius = "20px 20px 0px 0px";
+		document.getElementById("currentRecord").style.height = "40px";
+		document.getElementById("currentRecord").style.fontSize = "35px";
+		document.getElementById("currentRecord").style.lineHeight = "40px";
+		document.getElementById("recordTime").style.fontSize = "35px";
+		document.getElementById("resetButton").style.height = "80px";
+		document.getElementById("resetButton").style.fontSize = "50px";
+		
+		// Index page submit form popup
+		document.getElementById("submitFormPopup").style.left = "25%";
+		document.getElementById("submitFormPopup").style.width = "50%";
+		document.getElementById("submitFormPopup").style.height = "60%";		
+		document.getElementById("submitFormPopup").style.borderRadius = "20px";
+		document.getElementById("submitFormPopup").style.fontSize = "30px";
+		document.getElementById("closeButton").style.width = "30px";
+		document.getElementById("closeButton").style.fontSize = "30px";
+		document.getElementById("flavorText").style.margin = "0px";
+		document.getElementById("checkBoxes").style.marginTop = "50px";
+		document.getElementById("submitFormSubmitButton").style.marginTop = "50px";
+		document.getElementById("submitFormSubmitButton").style.width = "650px";
+		document.getElementById("submitFormSubmitButton").style.height = "80px";		
+		document.getElementById("submitFormSubmitButton").style.fontSize = "50px";
 	}
 }
 
